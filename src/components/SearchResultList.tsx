@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { GrLinkPrevious, GrLinkNext } from 'react-icons/gr';
-import '../styles/SearchResultList.css';
+import './SearchResultList.css';
 
 interface Person {
   name: string;
@@ -38,11 +38,15 @@ class SearchResultList extends Component<SearchResultListProps> {
           <button
             onClick={() => onPageChange(currentPage - 1)}
             disabled={currentPage === 1}
+            className="prev"
           >
             <GrLinkPrevious />
           </button>
           <span className="page">Page {currentPage}</span>
-          <button onClick={() => onPageChange(currentPage + 1)}>
+          <button
+            onClick={() => onPageChange(currentPage + 1)}
+            className="next"
+          >
             <GrLinkNext />
           </button>
         </div>
