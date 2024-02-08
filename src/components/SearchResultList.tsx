@@ -1,4 +1,3 @@
-// SearchResultList.tsx
 import { Component } from 'react';
 import { GrLinkPrevious, GrLinkNext } from 'react-icons/gr';
 import './SearchResultList.css';
