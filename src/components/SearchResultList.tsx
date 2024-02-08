@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { GrLinkPrevious, GrLinkNext } from 'react-icons/gr';
-import './SearchResultList.css';
+import '../styles/SearchResultList.css';
 
 interface Person {
   name: string;
