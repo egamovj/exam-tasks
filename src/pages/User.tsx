@@ -3,10 +3,11 @@ import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import { getUsers } from '../redux/userSlice';
 import { Link } from 'react-router-dom';
 import '../components/UserDetail.css';
+import Loader from '../components/Loader';
 
 const User = () => {
   const dispatch = useAppDispatch();
-  const users = useAppSelector((state) => state.user.data);
+  const { data: users, loading } = useAppSelector((state) => state.user);
 
   React.useEffect(() => {
     dispatch(getUsers());
@@ -14,15 +15,21 @@ const User = () => {
 
   return (
     <div className="user-wrapper">
-      {users?.map((userData: any) => (
-        <div key={userData.id} className="user">
-          <h3>{userData.name}</h3>
-          <h4>{userData.email}</h4>
-          <Link className="link" to={`/user/${userData.id}`}>
-            View Details
-          </Link>
+      {loading ? (
+        <div>
+          <Loader />
         </div>
-      ))}
+      ) : (
+        users?.map((userData: any) => (
+          <div key={userData.id} className="user">
+            <h3>{userData.name}</h3>
+            <h4>{userData.email}</h4>
+            <Link className="link" to={`/user/${userData.id}`}>
+              View Details
+            </Link>
+          </div>
+        ))
+      )}
     </div>
   );
 };

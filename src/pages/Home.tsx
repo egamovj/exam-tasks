@@ -3,6 +3,7 @@ import axios from 'axios';
 import SearchBar from '../components/SearchBar';
 import SearchResultList from '../components/SearchResultList';
 import ErrorBoundary from '../components/ErrorBoundary';
+import Loader from '../components/Loader';
 
 interface Person {
   name: string;
@@ -15,12 +16,14 @@ interface Person {
 interface AppState {
   searchResults: Person[];
   currentPage: number;
+  loading: boolean;
 }
 
 class Home extends Component<Record<string, never>, AppState> {
   state: AppState = {
     searchResults: [],
     currentPage: 1,
+    loading: false,
   };
 
   componentDidMount() {
@@ -28,6 +31,8 @@ class Home extends Component<Record<string, never>, AppState> {
   }
 
   fetchData = (searchTerm = '') => {
+    this.setState({ loading: true }); // Set loading to true when starting to fetch data
+
     let apiUrl = `https://swapi.dev/api/people/?page=${this.state.currentPage}`;
     if (searchTerm) {
       apiUrl += `&search=${searchTerm}`;
@@ -36,9 +41,10 @@ class Home extends Component<Record<string, never>, AppState> {
     axios
       .get(apiUrl)
       .then((response) => {
-        this.setState({ searchResults: response.data.results });
+        this.setState({ searchResults: response.data.results, loading: false }); // Set loading to false when data is fetched
       })
       .catch((error) => {
+        this.setState({ loading: false }); // Set loading to false on error
         throw new Error(`Failed to fetch data: ${error.message}`);
       });
   };
@@ -60,11 +66,17 @@ class Home extends Component<Record<string, never>, AppState> {
       <div className="homepage">
         <ErrorBoundary>
           <SearchBar onSearch={this.handleSearch} />
-          <SearchResultList
-            results={this.state.searchResults}
-            onPageChange={this.handlePageChange}
-            currentPage={this.state.currentPage}
-          />
+          {this.state.loading ? (
+            <div>
+              <Loader />
+            </div>
+          ) : (
+            <SearchResultList
+              results={this.state.searchResults}
+              onPageChange={this.handlePageChange}
+              currentPage={this.state.currentPage}
+            />
+          )}
         </ErrorBoundary>
       </div>
     );
