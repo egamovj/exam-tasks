@@ -31,7 +31,7 @@ class Home extends Component<Record<string, never>, AppState> {
   }
 
   fetchData = (searchTerm = '') => {
-    this.setState({ loading: true }); // Set loading to true when starting to fetch data
+    this.setState({ loading: true });
 
     let apiUrl = `https://swapi.dev/api/people/?page=${this.state.currentPage}`;
     if (searchTerm) {
@@ -41,10 +41,10 @@ class Home extends Component<Record<string, never>, AppState> {
     axios
       .get(apiUrl)
       .then((response) => {
-        this.setState({ searchResults: response.data.results, loading: false }); // Set loading to false when data is fetched
+        this.setState({ searchResults: response.data.results, loading: false });
       })
       .catch((error) => {
-        this.setState({ loading: false }); // Set loading to false on error
+        this.setState({ loading: false });
         throw new Error(`Failed to fetch data: ${error.message}`);
       });
   };
