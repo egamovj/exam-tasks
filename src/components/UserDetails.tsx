@@ -3,19 +3,24 @@ import { Link } from 'react-router-dom';
 import { useAppSelector } from '../redux/hooks';
 import { useParams } from 'react-router-dom';
 import './UserDetail.css';
+import Loader from './Loader';
 
 const UserDetails = () => {
   const { id } = useParams<{ id: string | undefined }>();
-
-  if (!id) {
-    return <div>User not found</div>;
-  }
-
-  const userId = parseInt(id, 20);
+  const userId = parseInt(id || '0', 10); // Default to 0 if id is undefined
 
   const user = useAppSelector((state) =>
     state.user?.data.find((userData) => userData.id === userId)
   );
+  const loading = useAppSelector((state) => state.user.loading);
+
+  if (loading) {
+    return (
+      <div>
+        <Loader />
+      </div>
+    );
+  }
 
   if (!user) {
     return <div>User not found</div>;

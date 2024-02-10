@@ -1,65 +1,76 @@
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .user-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .user {
-    background-color: dodgerblue;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  background-color: dodgerblue;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .userdetail {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0 auto;
-    gap: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 8px;
 }
 
 .carddetail {
-    background-color: #eee;
-    border-radius: 10px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 500px;
-    align-items: center;
-    padding: 15px 0;
+  background-color: #eee;
+  border-radius: 10px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  align-items: center;
+  padding: 15px 0;
 }
 
 .button {
-    padding: 5px 15px;
-    background-color: royalblue;
-    color: #fff;
-    font-size: 20px;
-    border-radius: 8px;
-    transition: all 0.4s linear;
-    max-width: 70px;
-    text-align: center;
-    justify-content: center;
+  padding: 5px 15px;
+  background-color: royalblue;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 8px;
+  transition: all 0.4s linear;
+  max-width: 70px;
+  text-align: center;
+  justify-content: center;
 }
 
 .button:hover {
-    background-color: rgb(125, 156, 247);
+  background-color: rgb(125, 156, 247);
 }
 
 .user-name .name {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 .username {
-    font-size: 18px;
-    font-weight: 500;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.loader {
+  position: fixed;
+  z-index: 999;
+  height: 100%;
+  width: 100%;
+  overflow: show;
+  margin: auto;
+  top: 50%;
+  left: 50%;
 }
