@@ -22,7 +22,7 @@ class SearchResultList extends Component<SearchResultListProps> {
 
     return (
       <div className="content">
-        <h2>Search Results</h2>
+        <h2 className="title">Search Results</h2>
         <div className="user-container">
           {results.map((person) => (
             <div key={person.name} className="user">

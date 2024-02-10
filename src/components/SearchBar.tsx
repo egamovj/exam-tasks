@@ -29,6 +29,7 @@ class SearchBar extends Component<SearchBarProps, SearchBarState> {
     const { searchTerm } = this.state;
     localStorage.setItem('searchTerm', searchTerm);
     this.props.onSearch(searchTerm);
+    this.setState({ searchTerm: '' });
   };
 
   render() {
