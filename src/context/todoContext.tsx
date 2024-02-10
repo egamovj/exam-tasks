@@ -7,7 +7,6 @@ export const TodoContext = React.createContext<{
   dispatch: React.Dispatch<TodoAction>;
 } | null>(null);
 
-// TodoProvider component with the useReducer hook
 const TodoProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {

@@ -7,7 +7,7 @@ import Loader from './Loader';
 
 const UserDetails = () => {
   const { id } = useParams<{ id: string | undefined }>();
-  const userId = parseInt(id || '0', 10); // Default to 0 if id is undefined
+  const userId = parseInt(id || '0', 10);
 
   const user = useAppSelector((state) =>
     state.user?.data.find((userData) => userData.id === userId)
