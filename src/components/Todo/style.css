@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+[data-theme='dark'].Theme-wrapper {
+  background: #1a1a1a;
+  color: #fff;
+}
+.Theme-wrapper {
+  font-family: 'Nunito', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #444;
+  background: #f5f6f7;
+  height: 100vh;
+  padding-top: 20px;
+}
+.Theme-toggler {
+  display: block;
+  margin: auto;
+}
+
+.App {
+  max-width: 728px;
+  margin: 4rem auto;
+}
+
+.App > h1 {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+[data-theme='dark'] .Card {
+  background: #292828;
+  color: #fff;
+}
+
+.Card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 0.5rem 1rem;
+}
+
+.Card:not(:last-child) {
+  border-bottom: 1px solid #333333;
+}
+
+.Card--text h1 {
+  color: #0970b4;
+  text-transform: capitalize;
+}
+
+.Card--button {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  background: #00aa69;
+  border: 1px solid #00aa69;
+  color: #fff;
+  margin-right: 1rem;
+}
+
+[data-theme='dark'] .Form {
+  background: #292828;
+  color: #fff;
+}
+
+.Form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #fff;
+  margin-bottom: 1rem;
+}
+
+.Form > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+[data-theme='dark'] .Form input {
+  background: #363636;
+  color: #fff;
+}
+
+.Form input {
+  background: #f5f6f7;
+  padding: 0.5rem 1rem;
+  border: 1px solid #0970b4;
+  border-radius: 10px;
+  display: block;
+  margin: 0.3rem 1rem 0 0;
+  outline: none;
+}
+
+.Form button {
+  background: #099dff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  border: none;
+}
+
+.line-through {
+  text-decoration: line-through;
+  color: #777 !important;
+}
+
+.hide-button {
+  display: none;
+}
+
+.title {
+  text-align: center;
+}
