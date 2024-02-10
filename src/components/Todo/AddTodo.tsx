@@ -1,38 +1,25 @@
 import * as React from 'react';
 import { TodoContext } from '../../context/todoContext';
-import { TodoContextType } from '../../types/@types.todo';
-import './style.css';
-
-interface FormData {
-  title: string;
-  description: string;
-  id: number;
-  status: boolean;
-}
+import { ITodo } from '../../types/@types.todo';
 
 const AddTodo: React.FC = () => {
-  const { saveTodo } = React.useContext(TodoContext) as TodoContextType;
-  const [formData, setFormData] = React.useState<FormData>({
-    title: '',
-    description: '',
-    id: 0,
-    status: false,
-  });
+  const { dispatch } = React.useContext(TodoContext)!;
+  const [formData, setFormData] = React.useState<ITodo | {}>();
 
-  const handleForm = (e: React.ChangeEvent<HTMLInputElement>): void => {
+  const handleForm = (e: React.FormEvent<HTMLInputElement>): void => {
     setFormData({
       ...formData,
       [e.currentTarget.id]: e.currentTarget.value,
     });
   };
 
-  const handleSaveTodo = (e: React.FormEvent, formData: FormData) => {
+  const handleSaveTodo = (e: React.FormEvent, formData: ITodo | any) => {
     e.preventDefault();
-    saveTodo(formData);
+    dispatch({ type: 'ADD_TODO', payload: formData });
   };
 
   return (
-    <form className="Form" onSubmit={(e) => handleSaveTodo(e, formData)}>
+    <form className="form" onSubmit={(e) => handleSaveTodo(e, formData)}>
       <div>
         <div>
           <label htmlFor="name">Title</label>
@@ -43,11 +30,8 @@ const AddTodo: React.FC = () => {
           <input onChange={handleForm} type="text" id="description" />
         </div>
       </div>
-      <button disabled={!formData.title || !formData.description}>
-        Add Todo
-      </button>
+      <button disabled={formData === undefined ? true : false}>Add Todo</button>
     </form>
   );
 };
-
 export default AddTodo;
