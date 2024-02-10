@@ -1,0 +1,65 @@
+a {
+    text-decoration: none;
+}
+
+.user-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.user {
+    background-color: dodgerblue;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.userdetail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 8px;
+}
+
+.carddetail {
+    background-color: #eee;
+    border-radius: 10px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.button {
+    padding: 5px 15px;
+    background-color: royalblue;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 8px;
+    transition: all 0.4s linear;
+    max-width: 70px;
+    text-align: center;
+    justify-content: center;
+}
+
+.button:hover {
+    background-color: rgb(125, 156, 247);
+}
+
+.user-name .name {
+    font-size: 30px;
+}
+
+.username {
+    font-size: 18px;
+    font-weight: 500;
+}

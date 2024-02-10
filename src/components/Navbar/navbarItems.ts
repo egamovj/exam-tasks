@@ -11,6 +11,10 @@ const navbarItems = [
     title: 'Todo',
     link: '/todo',
   },
+  {
+    title: 'Module 4',
+    link: '/user',
+  },
 ];
 
 export default navbarItems;
