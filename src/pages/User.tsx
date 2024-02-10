@@ -23,9 +23,9 @@ const User = () => {
         users?.map((userData: any) => (
           <div key={userData.id} className="user">
             <h3>{userData.name}</h3>
-            <h4>{userData.email}</h4>
-            <Link className="link" to={`/user/${userData.id}`}>
-              View Details
+            <h4>{userData.email.toLowerCase()}</h4>
+            <Link className="viewlink" to={`/user/${userData.id}`}>
+              User data
             </Link>
           </div>
         ))
