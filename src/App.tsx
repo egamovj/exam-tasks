@@ -6,6 +6,7 @@ import Todo from './pages/Todo';
 import About from './pages/About';
 import UserDetails from './components/UserDetails';
 import User from './pages/User';
+import Form from './components/Form';
 
 const App = () => {
   const [isopen, setisopen] = useState(false);
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/todo" element={<Todo />} />
         <Route path="/user" element={<User />} />
         <Route path="/user/:id" element={<UserDetails />} />
+        <Route path="/form" element={<Form />} />
       </Routes>
     </BrowserRouter>
   );

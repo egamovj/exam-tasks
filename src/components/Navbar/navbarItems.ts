@@ -15,6 +15,10 @@ const navbarItems = [
     title: 'Module 4',
     link: '/user',
   },
+  {
+    title: 'Form',
+    link: '/form',
+  },
 ];
 
 export default navbarItems;
