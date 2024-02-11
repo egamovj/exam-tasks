@@ -1,0 +1,41 @@
+p {
+  font-family: Lato;
+}
+
+#root {
+  padding: 30px;
+}
+
+.register-form {
+  max-width: 350px;
+  margin: auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-check {
+    display: flex;
+}
+
+.btns {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn {
+    max-width: 70px;
+    
+    text-align: center;
+}
