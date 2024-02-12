@@ -1,0 +1,42 @@
+.about-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.about-card {
+    padding: 10px 15px;
+    border: 1px solid linear;
+    background: #eee;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+
+.about-card:hover {
+    transform: scale(1.01);
+}
+
+.about-card h2 {
+    font-size: 28px;
+    padding-left: 10px;
+    color: #16A784;
+}
+
+.texts {
+    font-size: 18px;
+    font-family: sans-serif;
+    display: flex;
+    text-align: unset;
+    justify-content: flex-start;
+    letter-spacing: 1px;
+}
+
+.linkpage {
+    color: darkgoldenrod;
+}
